@@ -1,4 +1,4 @@
-# 3.0.0 Assignment - Foundation of Promises
+# Promises
 
 - [Setup](#setup)
 - [Testing Your Code](#testing-your-code)
