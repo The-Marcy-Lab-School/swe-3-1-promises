@@ -1,6 +1,6 @@
 {
   "idToTestNameHash": {
-    "MoTe1": "Modify Tests return4RandomColors - should return an array of 4 colors as a promise",
+    "MoTe1": "Modify Tests return4RandomColors - should return an array of colors as a promise",
     "MoTe2": "Modify Tests return4RandomColors - should return 4 random colors each time called",
     "FrScTe1": "From Scratch Tests resolvedWrapper - returns a promise that resolves to the value passed in",
     "FrScTe2": "From Scratch Tests rejectedWrapper - returns a rejected promise that needs to be caught",
@@ -25,7 +25,8 @@
     "From Scratch Tests pauseForMs - calls set timeout with the passed in number of milliseconds": "FrScTe8",
     "From Scratch Tests pauseForMs - returns a promise that resolves after the passed in number of milliseconds": "FrScTe9",
     "Modify Tests return4RandomColors - should return an array of 4 colors as a promise": "MoTe1",
-    "Modify Tests return4RandomColors - should return 4 random colors each time called": "MoTe2"
+    "Modify Tests return4RandomColors - should return 4 random colors each time called": "MoTe2",
+    "Modify Tests return4RandomColors - should return an array of colors as a promise": "MoTe1"
   },
   "testScores": {
     "Modify Tests": {

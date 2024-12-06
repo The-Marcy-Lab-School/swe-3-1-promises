@@ -58,8 +58,8 @@ describe(testSuiteName, () => {
 
     await handleResolvedPromise(resolvedPromise)
       .then((value) => {
-        expect(value).toBe(randomValue);
         expect(log).toHaveBeenCalledWith(randomValue);
+        expect(value).toBe(randomValue.toUpperCase());
 
         scoreCounter.correct(expect); // DO NOT TOUCH
       });
@@ -71,8 +71,8 @@ describe(testSuiteName, () => {
 
     await handleResolvedOrRejectedPromise(resolvedPromise)
       .then((value) => {
-        expect(value).toBe(randomValue);
         expect(log).toHaveBeenCalledWith(randomValue);
+        expect(value).toBe(randomValue.toUpperCase());
 
         scoreCounter.correct(expect); // DO NOT TOUCH
       });

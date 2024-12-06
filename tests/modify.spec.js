@@ -13,7 +13,7 @@ describe(testSuiteName, () => {
     return new Promise(setImmediate);
   });
 
-  it('return4RandomColors - should return an array of 4 colors as a promise', async () => {
+  it('return4RandomColors - should return an array of colors as a promise', async () => {
     await expect(return4RandomColors()).toBeInstanceOf(Promise);
     await expect(return4RandomColors()).resolves.toBeInstanceOf(Array);
     scoreCounter.correct(expect); // DO NOT TOUCH

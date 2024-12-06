@@ -1,16 +1,25 @@
 const crypto = require('node:crypto');
 
-const numsToRGBColor = ([color1, color2, color3]) => {
+/* 
+Given an array like [123, 456, 789], returns 'rgb(123,456,789)'
+*/
+const convertColorsArrToRGB = ([color1, color2, color3]) => {
   return `rgb(${color1}, ${color2}, ${color3})`;
 };
 
 const getRandomBytes = () => new Promise((resolve, reject) => {
   crypto.randomFill(new Uint8Array(3), (err, buffer) => {
     if (err) return reject(err);
-    resolve([...buffer]);
+    const colorsArr = [...buffer]
+    // Focus here!
+    // An array like this will be resolved: [123, 211, 105]
+    resolve(colorsArr);
   });
 });
 
+// Hints: 
+// - understand what getRandomBytes() resolves to
+// - understand how to chain together getRandomBytes
 const return4RandomColors = () => {
   const colors = [];
   return getRandomBytes()
@@ -30,7 +39,7 @@ const return4RandomColors = () => {
 return4RandomColors().then(console.log);
 
 module.exports = {
-  numsToRGBColor,
+  convertColorsArrToRGB,
   getRandomBytes,
   return4RandomColors,
 };
