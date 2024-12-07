@@ -26,32 +26,6 @@ describe(testSuiteName, () => {
     return new Promise(setImmediate);
   });
 
-  it('resolvedWrapper - returns a promise that resolves to the value passed in', async () => {
-    const randomValue = `Your random string: ${returnRandomString()}`;
-
-    await expect(resolvedWrapper(randomValue)).resolves.toBe(randomValue);
-
-    scoreCounter.correct(expect); // DO NOT TOUCH
-  });
-
-  it('rejectedWrapper - returns a rejected promise that needs to be caught', async () => {
-    const randomValue = `Your random string: ${returnRandomString()}`;
-
-    await expect(rejectedWrapper(randomValue)).rejects.toBeTruthy();
-
-    scoreCounter.correct(expect); // DO NOT TOUCH
-  });
-
-  it('rejectedWrapper - the rejected value is a new Error', async () => {
-    const randomValue = `Your random string: ${returnRandomString()}`;
-    const rejectedValue = rejectedWrapper(randomValue);
-
-    await expect(rejectedValue).rejects.toBeInstanceOf(Error);
-    await expect(rejectedValue).rejects.toHaveProperty('message', randomValue);
-
-    scoreCounter.correct(expect); // DO NOT TOUCH
-  });
-
   it('handleResolvedPromise - uses .then to log and return (in a promise) the value from the passed in promise', async () => {
     const randomValue = `Your random string: ${returnRandomString()}`;
     const resolvedPromise = Promise.resolve(randomValue);
@@ -95,6 +69,32 @@ describe(testSuiteName, () => {
         // what is the return value of a .catch? Is it a rejected or resolved value?
         expect(err).toBeNull();
       });
+  });
+
+  it('resolvedWrapper - returns a promise that resolves to the value passed in', async () => {
+    const randomValue = `Your random string: ${returnRandomString()}`;
+
+    await expect(resolvedWrapper(randomValue)).resolves.toBe(randomValue);
+
+    scoreCounter.correct(expect); // DO NOT TOUCH
+  });
+
+  it('rejectedWrapper - returns a rejected promise that needs to be caught', async () => {
+    const randomValue = `Your random string: ${returnRandomString()}`;
+
+    await expect(rejectedWrapper(randomValue)).rejects.toBeTruthy();
+
+    scoreCounter.correct(expect); // DO NOT TOUCH
+  });
+
+  it('rejectedWrapper - the rejected value is a new Error', async () => {
+    const randomValue = `Your random string: ${returnRandomString()}`;
+    const rejectedValue = rejectedWrapper(randomValue);
+
+    await expect(rejectedValue).rejects.toBeInstanceOf(Error);
+    await expect(rejectedValue).rejects.toHaveProperty('message', randomValue);
+
+    scoreCounter.correct(expect); // DO NOT TOUCH
   });
 
   it('pauseForMs - returns a promise, but that promise has no value', async () => {
