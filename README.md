@@ -141,7 +141,7 @@ The `rejectedWrapper` function should take in an `errorMessage`, create a new `E
 
 Example: 
 ```js
-resolvedWrapper('Oh no!')
+rejectedWrapper('Oh no!')
   .catch((err) => {
     console.log(err.message)
     // Oh no!
